@@ -1,0 +1,84 @@
+V "GNAT Lib v5"
+M P W=b
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV SPARK_05
+
+U main2joueurs%b	main2joueurs.adb	86ded90a NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W participant%s		participant.adb		participant.ali
+W partie%s		partie.adb		partie.ali
+W puissance4%s		puissance4.adb		puissance4.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-except.ads		20140730140058 5250cb69 ada.exceptions%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20140730140058 dc4d0634 ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D main2joueurs.adb	20171129233850 a279f815 main2joueurs%b
+D participant.ads	20171127003606 ced88c70 participant%s
+D partie.ads		20171129232504 7160be20 partie%s
+D partie.adb		20171127012445 58dec364 partie%b
+D puissance4.ads	20171129233904 55396f3f puissance4%s
+D puissance4.adb	20171129233840 93e1ff83 puissance4%b
+D system.ads		20141031112219 1d274481 system%s
+D s-conca2.ads		20140225151544 02a0d7d0 system.concat_2%s
+D s-conca3.ads		20140225151544 0b705ca5 system.concat_3%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-imgint.ads		20090409150019 02dbe0c2 system.img_int%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20140801100131 aa763b52 system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 12|1r6 2r6 9r5 10r5
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 12|2w10 10r9
+X 7 a-textio.ads
+49K13*Text_IO 471e16 12|1w10 9r9
+263U14*Put_Line 12|35s4 36s4 37s4 38s4 39s4
+X 12 main2joueurs.adb
+13U11*Main2Joueurs 13b11 44l5 44t17
+14K12 MyPuissance4[16|11] 18r35 19r35 22r35 23r35 24r35 25r35 26r35 27r35
+. 28r35 31r7 34r4
+18K12 MyPartie[14|29] 29r8
+31a4 P{16|13A8[14]} 34m29 43m16 43r16
+X 13 participant.ads
+1K9*Participant 12|4w6 11r5 13|8e16
+3n30*Joueur2{3E10} 12|43r19
+X 14 partie.ads
+29k9*Partie 12|5w6 18r28 14|37e11
+35U15 Joue_Partie 12|43s4[18]
+X 16 puissance4.ads
+11k9*Puissance4 12|3w6 14r32 16|36e15
+13A8 Etat(integer)<integer> 12|18r48[14] 31r20[14]
+15R8 Coup 12|19r48[14]
+20U13 Initialiser 12|34s17[14]
+22V12 Jouer{13A8[12|14]} 12|22r48[14]
+24V12 Est_Gagnant{boolean} 12|23r48[14]
+26V12 Est_Nul{boolean} 12|24r48[14]
+28U13 Affiche_Jeu 12|25r48[14]
+30U13 Affiche_Coup 12|26r48[14]
+32V12 Demande_Coup_Joueur1{15R8[12|14]} 12|27r48[14]
+34V12 Demande_Coup_Joueur2{15R8[12|14]} 12|28r48[14]
+

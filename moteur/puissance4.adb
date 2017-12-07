@@ -7,6 +7,9 @@ use Ada.Text_IO;
 use Ada.Integer_Text_IO;
 use Participant;
 
+package Liste_Coups is new Liste_Generique(Coup, Affiche_Coup);
+use Liste_Coups;
+
 package body Puissance4 is
 
 
@@ -146,7 +149,7 @@ package body Puissance4 is
     end loop;
     J := Joueur1;
     if Est_Gagnant(E,J) = false then
-      J := Joueur2;
+      J := JoueurMoteur;
       if Est_Gagnant(E,J) = false then
         Put_Line("MATCH NUL !!");
         return true;
@@ -187,8 +190,8 @@ package body Puissance4 is
 
 procedure Affiche_Coup(C : in Coup) is
 begin
-  if C.Player = Joueur2 then
-    Put("Joueur2 joue ");Put(C.Col);New_Line;
+  if C.Player = JoueurMoteur then
+    Put("JoueurMoteur joue ");Put(C.Col);New_Line;
   else
     Put("Joueur1 joue ");Put(C.Col);New_Line;
   end if;
@@ -222,16 +225,16 @@ function Demande_Coup_Joueur1(E : Etat) return Coup is
     return C;
   end Demande_Coup_Joueur1;
 
-  function Demande_Coup_Joueur2(E : Etat) return Coup is
+  function Demande_Coup_JoueurMoteur(E : Etat) return Coup is
       C : Coup;
       B : Boolean;
       T : Boolean;
     begin
-      C.Player := Joueur2;
+      C.Player := JoueurMoteur;
       B := false;
       T := false;
       while (B = false or T = false) loop
-        Put_Line("Joueur2 prochain coup ?");
+        Put_Line("JoueurMoteur prochain coup ?");
         Get(C.Col);
         if C.Col>=largeur or C.Col<0 then
         Put("Error: Cout Impossible");
@@ -245,7 +248,147 @@ function Demande_Coup_Joueur1(E : Etat) return Coup is
         end if;
       end loop;
       return C;
-    end Demande_Coup_Joueur2;
+    end Demande_Coup_JoueurMoteur;
+
+
+  function Coups_Possibles(E : Etat; J : Joueur) return Liste_Coups.Liste is
+    L : Liste_Coups.Liste;
+    J:Integer;
+  begin
+    for J in 1..largeur loop
+      if E(C.Col*hauteur+hauteur-1) = 0 then
+        Insere_Tete(J,L);
+      end if;
+    end loop;
+    return L;
+  end Coups_Possibles
+
+  function Eval(E : Etat ) return Integer is
+    I : Integer;
+    S : Integer;
+    N : Integer;
+    SMAX : Integer;
+    K1 : Integer;
+    K2 : Integer;
+    X : Integer;
+  begin
+  if Est_Nul(E) then
+    return 0;
+  end if;
+  I := 0;
+  S := 0;
+  SMAX := 0;
+  X := 1;
+  for I in E'range loop  -- boucle a optim avec while
+    if I mod hauteur = 0 or E(I) /= X then
+      S := 0;
+    end if;
+    if E(I) = X then
+      S := S + 1;
+      if SMAX < S then
+        SMAX := S;
+      end if;
+      if S = nbp then
+        return 100;
+      end if;
+    end if;
+  end loop;
+  I := 0;
+  S := 0;
+  K1 := -1;
+  K2 := 0;
+  for I in E'range loop
+    if I mod hauteur = 0 then
+      K1 := K1 + 1;
+      K2 := 0;
+    end if;
+    if I mod hauteur = 0 or E(K2+K1) /= X then
+      S := 0;
+    end if;
+    if E(K2+K1) = X then
+      S := S + 1;
+      if SMAX < S then
+        SMAX := S;
+      end if;
+      if S = nbp then
+        return 100;
+      end if;
+    end if;
+    K2 := K2 + largeur;
+  end loop;
+  I := 0;
+  S := 0;
+  for I in E'range loop
+    K2 := I/hauteur;
+    K1 := 0;
+    if E(I) = X then
+      S := S + 1;
+      if SMAX < S then
+        SMAX := S;
+      end if;
+      while (I+K1+hauteur+1)/hauteur = K2+1 and (I+K1+hauteur+1) < largeur*hauteur-1 loop
+        K2 := K2 +1;
+        K1 := K1 + hauteur + 1;
+        if E(I+K1) /= X then
+          S := 0;
+        else
+          S := S + 1;
+          if SMAX < S then
+            SMAX := S;
+          end if;
+          if S = nbp then
+            return 100;
+          end if;
+        end if;
+      end loop;
+    else
+      S := 0;
+    end if;
+  end loop;
+  I := 0;
+  S := 0;
+  K2 := 0;
+  for I in E'range loop
+    K2 := I/hauteur;
+    K1 := 0;
+    if E(I) = X then
+      S := S + 1;
+      if SMAX < S then
+        SMAX := S;
+      end if;
+      while (I+K1-hauteur+1)/hauteur = K2-1 and (I+K1-hauteur+1) > -1 loop
+        K2 := K2 - 1;
+        K1 := K1 - hauteur + 1;
+        if E(I+K1) /= X then
+          S := 0;
+        else
+          S := S + 1;
+          if SMAX < S then
+            SMAX := S;
+          end if;
+          if S = nbp then
+            return 100;
+          end if;
+        end if;
+      end loop;
+    else
+      S := 0;
+    end if;
+  end loop;
+  return SMAX/nbp*100;
+end Eval;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

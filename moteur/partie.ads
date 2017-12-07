@@ -1,4 +1,4 @@
--- with Liste_Generique;
+with Liste_Generique;
 with Participant;
 with Ada.Text_IO;
 use Participant;

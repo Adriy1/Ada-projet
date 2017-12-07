@@ -1,0 +1,21 @@
+V "GNAT Lib v5"
+P ZX
+
+RN
+RV SPARK_05
+
+U participant%b		participant.adb		a34b225a NE OO PK
+
+U participant%s		participant.ads		ced88c70 EE NE OO PK
+
+D participant.ads	20171127003606 ced88c70 participant%s
+D participant.adb	20171127003614 6d93ae2a participant%b
+D system.ads		20141031112219 1d274481 system%s
+X 1 participant.ads
+1K9*Participant 8l5 8e16 2|1b14 12l5 12t16
+3E10*Joueur 3e38 6r36 6r51 2|3r34 3r49
+3n21*Joueur1{3E10} 2|5r11 8r14
+3n30*Joueur2{3E10} 2|6r14
+6V14*Adversaire{3E10} 6=25 2|3b12 10l7 10t17
+6e25 J{3E10} 2|3b23 5r9
+

@@ -29,10 +29,10 @@ D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
 D interfac.ads		20141120112812 6033a23f interfaces%s
 D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
 D participant.ads	20171127003606 ced88c70 participant%s
-D partie.ads		20171129232504 7160be20 partie%s
+D partie.ads		20171206225852 7160be20 partie%s
 D partie.adb		20171127012445 58dec364 partie%b
-D puissance4.ads	20171129233904 55396f3f puissance4%s
-D puissance4.adb	20171129233840 93e1ff83 puissance4%b
+D puissance4.ads	20171206230034 55396f3f puissance4%s
+D puissance4.adb	20171206230113 93e1ff83 puissance4%b
 D system.ads		20141031112219 1d274481 system%s
 D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
 D s-exctab.ads		20140225151139 54135002 system.exception_table%s

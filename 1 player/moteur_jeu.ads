@@ -8,7 +8,7 @@ generic
     type Coup is private;
 
     -- Calcule l'etat suivant en appliquant le coup
-    with function Etat_Suivant(E : Etat; C : Coup) return Etat;
+    with function Etat_Suivant(E : in out Etat; C : Coup) return Etat;
     -- Indique si l'etat courant est gagnant pour J
     with function Est_Gagnant(E : Etat; J : Joueur) return Boolean;
     -- Indique si l'etat courant est un status quo (match nul)

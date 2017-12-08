@@ -1,0 +1,144 @@
+V "GNAT Lib v5"
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U moteur_jeu%b		moteur_jeu.adb		5b0ce1c1 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W liste_generique%s	liste_generique.adb	liste_generique.ali
+W participant%s		participant.adb		participant.ali
+W puissance4%s		puissance4.adb		puissance4.ali
+Z system%s		system.ads		system.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+
+U moteur_jeu%s		moteur_jeu.ads		63e8f862 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W liste_generique%s	liste_generique.adb	liste_generique.ali
+W participant%s		participant.adb		participant.ali
+W puissance4%s		puissance4.adb		puissance4.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-except.ads		20140730140058 5250cb69 ada.exceptions%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-nudira.ads		20100622172941 2fef2912 ada.numerics.discrete_random%s
+D a-nudira.adb		20100622172941 e57ce22b ada.numerics.discrete_random%b
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20140730140058 dc4d0634 ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D a-uncdea.ads		20070406091342 f15a5ed1 ada.unchecked_deallocation%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D liste_generique.ads	20171207131102 34bd58f2 liste_generique%s
+D liste_generique.adb	20171208135732 bfdf41fa liste_generique%b
+D moteur_jeu.ads	20171208140842 5390bf01 moteur_jeu%s
+D moteur_jeu.adb	20171208140955 e140b915 moteur_jeu%b
+D participant.ads	20171208141025 7ad64cb2 participant%s
+D puissance4.ads	20171208135732 467ea6f7 puissance4%s
+D puissance4.adb	20171208142044 c854ac25 puissance4%b
+D system.ads		20141031112219 1d274481 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-rannum.ads		20150205111725 99ade2f2 system.random_numbers%s
+D s-soflin.ads		20140801100131 aa763b52 system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 18|4r6 19|1r6 2r6 3r6 9r5 10r5 19r27
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[11|46] 19|2w10 10r9
+X 5 a-numeri.ads
+16K13*Numerics 32e17 19|3r10 19r31
+X 6 a-nudira.ads
+44k22*Discrete_Random 73e33 19|3w19 19r40
+48R9 Generator<28|63R9> 19|75r11[19]
+50V13 Random{19|18I8} 19|89s31[19]
+53U14 Reset<28|100p14> 19|77s5[19]
+X 10 a-textio.ads
+49K13*Text_IO 471e16 18|4w10 19|1w10 9r9
+X 16 liste_generique.ads
+15k9*Liste_Generique 55e20 18|2w6 20r37 19|6w6
+16P10 Liste 18|22r76[20] 19|26r23[18|20] 72r21[18|20]
+17P10 Iterateur 19|27r26[18|20] 74r24[18|20]
+32V14 Creer_Iterateur{17P10[18|20]} 19|50s29[18|20] 79s25[18|20]
+38U15 Suivant 19|52s21[18|20] 64s21[18|20] 83s21[18|20]
+41V14 Element_Courant{18|8+10} 19|51s50[18|20] 54s53[18|20] 80s22[18|20]
+. 81s43[18|20] 84s50[18|20] 86s28[18|20] 90s30[18|20]
+44V14 A_Suivant{boolean} 19|53s27[18|20] 82s23[18|20]
+X 18 moteur_jeu.ads
+7+10 Etat 11r43 11r66 13r35 15r31 22r39 24r28 36r28 44r31 19|24r31 28r14
+. 70r27
+8+10 Coup 11r53 18r40 20r53 36r41 44r54 19|24r54 70r40 71r9
+11V19 Etat_Suivant{7+10} 11=32 11>49 19|31s15
+11*32 E{7+10}
+11*49 C{8+10}
+13V19 Est_Gagnant{boolean} 13>31 13>41 19|37s10 40s10
+13*31 E{7+10}
+13e41 J{20|3E10}
+15V19 Est_Nul{boolean} 15>27 19|43s10
+15*27 E{7+10}
+18U20 Affiche_Coup 18>33 20r59
+18*33 C{8+10}
+20K18 Liste_Coups[16|15] 22r64 19|26r11 27r14 50r17 51r38 52r9 53r15 54r41
+. 64r9 72r9 74r12 79r13 80r10 81r31 82r11 83r9 84r38 86r16 90r18
+22V19 Coups_Possibles{16|16P10[20]} 22>35 22>45 19|49s14 78s10
+22*35 E{7+10}
+22e45 J{20|3E10}
+24V19 Eval{integer} 24>24 19|47s23
+24*24 E{7+10}
+26i5 P{natural} 19|81r27 84r34
+28e5 JoueurMoteur{20|3E10} 19|32r14 37r27 40r38 55r12 78r28 81r65 84r72
+30k9*Moteur_Jeu 7z10 8z10 11z19 13z19 15z19 18z20 20z18 22z19 24z19 26z5
+. 28z5 44E14 47l5 47e15 19|16b14 97l5 97t15
+36V13*Choix_Coup{8+10} 36>24 19|70b12 95l7 95t17
+36*24 E{7+10} 19|70b23 78r26 81r25 84r32
+44V14 Eval_Min_Max{integer} 44>27 44>37 44>50 44>60 19|24b14 51s16 54s19
+. 68l7 68t19 81s12 84s19
+44*27 E{7+10} 19|24b27 30r15
+44i37 P{natural} 19|24b37 46r10 51r34 54r37
+44*50 C{8+10} 19|24b50 31r33
+44e60 J{20|3E10} 19|24b60 32r10 49r46 51r83 54r86 55r27
+X 19 moteur_jeu.adb
+18I8 Valeurs<short_short_integer> 19r56
+19K15 Rand[6|44] 20r11
+25i7 val{integer} 51m9 56r14 57m13 60r14 61m13 66r14
+25i11 valMax{integer} 54m9 56r18 57r20 60r18 61r20
+25i18 Mult{integer} 33m9 35m9 47r16
+26p7 L{16|16P10[18|20]} 49m9 50r45
+27p7 Iter{16|17P10[18|20]} 50m9 51r66 52m29 52r29 53r37 54r69 64m29 64r29
+28*7 Next{18|7+10} 30m7 31m7 31m28 31r28 37r22 40r22 43r18 47r28 49r30 51r29
+. 54r32
+71*5 C{18|8+10} 80m5 86m11 90m13 94r12
+72p5 L{16|16P10[18|20]} 78m5 79r41
+73i5 val{integer} 81m5 85r20 87m11 89r23
+73i9 valMax{integer} 84m9 85r13 87r18 89r14
+74p5 Iter{16|17P10[18|20]} 79m5 80r38 81r59 82r33 83m29 83r29 84r66 86r44
+. 90r46
+75r5 Gen{6|48R9[19]} 77r11 89r38
+X 20 participant.ads
+1K9*Participant 18|1w6 1r23 19|5w6 11r5 20|8e16
+3E10*Joueur 18|13r45 22r49 28r20 44r64 19|24r64 20|3e38
+6V14*Adversaire{3E10} 19|40s27 49s35 51s72 54s75
+X 21 puissance4.ads
+12k9*Puissance4 18|3w6 19|4w6 21|45e15
+

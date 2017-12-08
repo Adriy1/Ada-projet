@@ -14,30 +14,23 @@ use Participant;
 
 
 procedure Main1Joueurs is
-   package MyPuissance4 is new Puissance4(10,10,4);
+   package MyPuissance4 is new Puissance4(7,6,4);
    --package Liste_Coups is new Liste_Generique(MyPuissance4.Coup, MyPuissance4.Affiche_Coup);
    -- definition d'une partie entre un humain en Joueur 1 et un humain en Joueur 2
    --use Liste_Coups;
 
-   function Etat_Suivant(E : MyPuissance4.Etat; C : MyPuissance4.Coup) return MyPuissance4.Etat is
-     S : MyPuissance4.Etat;
-   begin
-     S := E;
-     S := MyPuissance4.Jouer(S,C);
-     return S;
-   end Etat_Suivant;
 
   package MyComputer is new Moteur_Jeu(
           MyPuissance4.Etat,
           MyPuissance4.Coup,
-          Etat_Suivant,
+          MyPuissance4.Jouer,
           MyPuissance4.Est_Gagnant,
           MyPuissance4.Est_Nul,
           MyPuissance4.Affiche_Coup,
           MyPuissance4.Liste_Coups,
           MyPuissance4.Coups_Possibles,
           MyPuissance4.Eval,
-          3,
+          4,
           Joueur1
           );
 

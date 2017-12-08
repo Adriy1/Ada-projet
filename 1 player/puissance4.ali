@@ -1,0 +1,171 @@
+V "GNAT Lib v5"
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U puissance4%b		puissance4.adb		7ca49ce7 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W participant%s		participant.adb		participant.ali
+W puissance4%s		puissance4.adb		puissance4.ali
+
+U puissance4%s		puissance4.ads		4aae0bd1 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_deallocation%s
+W liste_generique%s	liste_generique.adb	liste_generique.ali
+W participant%s		participant.adb		participant.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-except.ads		20140730140058 5250cb69 ada.exceptions%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20140730140058 dc4d0634 ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D a-uncdea.ads		20070406091342 f15a5ed1 ada.unchecked_deallocation%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D liste_generique.ads	20171207131102 34bd58f2 liste_generique%s
+D liste_generique.adb	20171208135732 bfdf41fa liste_generique%b
+D participant.ads	20171208141025 7ad64cb2 participant%s
+D puissance4.ads	20171208135732 467ea6f7 puissance4%s
+D puissance4.adb	20171208142044 c854ac25 puissance4%b
+D system.ads		20141031112219 1d274481 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20140801100131 aa763b52 system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 16|3r6 17|1r6 2r6 6r5 7r5
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 17|2w10 7r9
+X 7 a-textio.ads
+49K13*Text_IO 471e16 16|3w10 17|1w10 6r9
+166U14*New_Line 17|192s37 194s37
+242U14*Put 17|167s7 168s7 175s11 177s13 179s13 192s5 194s5 213s7 217s11 238s9
+. 242s13
+263U14*Put_Line 17|152s9 165s5 170s5 183s7 185s5 196s3 210s7 235s9
+X 8 a-tiinio.ads
+56U14*Get 17|211s7[3|18] 236s9[3|18]
+66U14*Put 17|192s26[3|18] 194s26[3|18]
+X 13 liste_generique.ads
+15k9*Liste_Generique 55e20 16|1w6 39r30
+16P10 Liste 16|41r69[39] 17|252r71[16|39] 253r23[16|39]
+23U15 Insere_Tete 17|259s23[16|39]
+X 15 participant.ads
+1K9*Participant 8e16 16|1w23 2w6 4r5 17|4w6 8r5
+3E10*Joueur 3e38 16|20r14 27r38 41r42 17|39r38 139r9 252r44
+3n21*Joueur1{3E10} 17|31r19 48r12 148r10 206r17
+3n30*Joueur2{3E10} 17|150r12 191r17 231r19
+X 16 puissance4.ads
+8i3 largeur{integer} 16r26 17|19r18 84r18 93r70 166r18 173r19 212r17 237r19
+. 256r19 316r16 328r68
+9i3 hauteur{integer} 16r34 17|19r26 28r19 32r15 34r15 54r16 70r16 74r16 89r15
+. 93r21 93r32 93r57 93r78 95r22 114r15 118r21 118r32 118r57 120r22 172r17
+. 174r16 174r24 176r21 176r29 216r20 216r28 241r22 241r30 258r20 258r28 282r14
+. 300r14 304r14 321r13 328r19 328r30 328r55 328r76 330r20 351r13 358r19 358r30
+. 358r55 360r20
+10i3 nbp{integer} 17|59r16 79r16 100r20 125r20 290r14 312r14 338r18 368r18
+. 377r15
+12k9*Puissance4 8z3 9z3 10z3 45l5 45e15 17|3w6 10b14 400l5 400t15
+16A8*Etat(integer)<integer> 23r33 25r29 25r52 27r28 29r24 31r29 35r37 37r37
+. 41r32 43r21 17|15r33 24r29 24r52 39r28 137r24 159r29 201r35 226r37 252r34
+. 266r21
+18R8*Coup 21e13 25r39 33r33 35r50 37r50 39r46 17|24r39 189r31 201r48 202r9
+. 226r50 227r11 254r9
+19i5 Col{integer} 17|28r15 32r11 34r11 192r32 194r32 211m13 212r12 212r30
+. 216r16 236m15 237r14 237r32 241r18 257m11 258r16
+20e5 Player{15|3E10} 17|31r10 191r8 206m7 231m9
+23U13*Initialiser 23<25 17|15b13 22l7 22t18
+23a25 E{16A8} 17|15b25 20m7
+25V12*Jouer{16A8} 25=18 25>35 17|24b12 37l7 37t12
+25a18 E{16A8} 17|24b18 28r11 32m7 34m7 36r12
+25r35 C{18R8} 17|24b35 28r13 31r8 32r9 34r9
+27V12*Est_Gagnant{boolean} 27>24 27>34 17|39b12 135l7 135t18 149s8 151s10
+27a24 E{16A8} 17|39b24 53r14 54r31 57r10 69r14 74r31 77r10 88r14 91r10 96r14
+. 113r14 116r10 121r14
+27e34 J{15|3E10} 17|39b34 48r8
+29V12*Est_Nul{boolean} 29>20 17|137b12 157l7 157t14 274s6
+29a20 E{16A8} 17|137b20 142r14 143r10 149r20 151r22
+31U13*Affiche_Jeu 31>25 17|159b13 186l7 186t18
+31a25 E{16A8} 17|159b25 174r12 176r17
+33U13*Affiche_Coup 33>26 39r52 17|189b11 197l5 197t17
+33r26 C{18R8} 17|189b24 191r6 192r30 194r30
+35V12*Demande_Coup_Joueur1{18R8} 35>33 17|201b10 224l7 224t27
+35a33 E{16A8} 17|201b31 216r12
+37V12*Demande_Coup_Joueur2{18R8} 37>33 17|226b12 249l9 249t29
+37a33 E{16A8} 17|226b33 241r14
+39K11*Liste_Coups[13|15] 41r57 17|252r59 253r11 259r11
+41V12*Coups_Possibles{13|16P10[39]} 41>28 41>38 17|252b14 263l9 263t24
+41a28 E{16A8} 17|252b30 258r12
+41e38 J{15|3E10} 17|252b40
+43V12*Eval{integer} 43>17 17|266b12 378l5 378t9
+43a17 E{16A8} 17|266b17 274r14 281r12 282r29 285r8 299r12 304r29 307r8 320r12
+. 323r8 331r12 350r12 353r8 361r12
+X 17 puissance4.adb
+16i5 I{integer} 18m5
+19i9 I{integer} 20r9
+25i5 I{integer} 27m5 28r27 29m7 29r12 32r23 34r23
+40i5 I{integer} 46m5 65m5 86m5 110m5
+41i5 S{integer} 47m5 55m9 58m9 58r14 59r12 66m5 75m9 78m9 78r14 79r12 87m5
+. 92m9 92r14 97m13 99m13 99r18 100r16 107m9 111m5 117m9 117r14 122m13 124m13
+. 124r18 125r16 131m9
+42i5 K1{integer} 67m5 71m9 71r15 74r36 77r15 90m7 93r18 93r54 95m11 95r17
+. 96r18 115m7 118r18 118r54 120m11 120r17 121r18
+43i5 K2{integer} 68m5 72m9 74r33 77r12 84m7 84r13 89m7 93r42 94m11 94r17
+. 112m5 114m7 118r42 119m11 119r17
+44i5 X{integer} 49m7 51m7 54r39 57r17 74r43 77r21 91r17 96r25 116r17 121r25
+53i9 I{integer} 54r10 54r33 57r12
+69i9 I{integer} 70r10 74r10
+88i9 I{integer} 89r13 91r12 93r16 93r52 96r16
+113i9 I{integer} 114r13 116r12 118r16 118r52 121r16
+138i5 I{integer} 141m5
+139e5 J{15|3E10} 148m5 149r22 150m7 151r24
+142i9 I{integer} 143r12
+160i5 I{integer} 164m5 171m5
+161i5 J{integer} 163m5
+166i9 I{integer} 168r25
+172i9 J{integer} 174r32 176r37
+173i11 I{integer} 174r14 176r19
+202r5 C{16|18R8} 206m5 211m11 211r11 212r10 212r28 216r14 223r12
+203b5 B{boolean} 207m5 209r12 215m9
+204b5 T{boolean} 208m5 209r25 219m11
+227r7 C{16|18R8} 231m7 236m13 236r13 237r12 237r30 241r16 248r14
+228b7 B{boolean} 232m7 234r14 240m11
+229b7 T{boolean} 233m7 234r27 244m13
+253p7 L{13|16P10[16|39]} 259m37 259r37 262r14
+254r7 C{16|18R8} 257m9 258r14 259r35
+256i11 I{integer} 257r18
+267i5 I{integer} 277m3 295m3 318m3 347m3
+268i5 S{integer} 278m3 283m7 286m7 286r12 287r17 288r17 290r10 296m3 305m7
+. 308m7 308r12 309r17 310r17 312r10 319m3 324m7 324r12 325r17 326r17 332m11
+. 334m11 334r16 335r21 336r21 338r14 344m7 348m3 354m7 354r12 355r17 356r17
+. 362m11 364m11 364r16 365r21 366r21 368r14 374m7
+269i5 SMAX{integer} 279m3 287r10 288m9 309r10 310m9 325r10 326m9 335r14 336m13
+. 355r10 356m9 365r14 366m13 377r10
+270i5 K1{integer} 297m3 301m7 301r13 304r34 307r13 322m5 328r16 328r52 330m9
+. 330r15 331r16 352m5 358r16 358r52 360m9 360r15 361r16
+271i5 K2{integer} 298m3 302m7 304r31 307r10 316m5 316r11 321m5 328r40 329m9
+. 329r15 349m3 351m5 358r40 359m9 359r15
+272i5 X{integer} 280m3 282r37 285r15 304r41 307r19 323r15 331r23 353r15 361r23
+281i7 I{integer} 282r8 282r31 285r10
+299i7 I{integer} 300r8 304r8
+320i7 I{integer} 321r11 323r10 328r14 328r50 331r14
+350i7 I{integer} 351r11 353r10 358r14 358r50 361r14
+

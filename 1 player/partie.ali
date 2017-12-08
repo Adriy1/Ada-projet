@@ -5,14 +5,15 @@ RN
 RV NO_IO
 RV SPARK_05
 
-U partie%b		partie.adb		51720bed NE OO PK GE IL
+U partie%b		partie.adb		6f42af97 NE OO PK GE IL
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
+W moteur_jeu%s		moteur_jeu.adb		moteur_jeu.ali
 W participant%s		participant.adb		participant.ali
 W puissance4%s		puissance4.adb		puissance4.ali
 
-U partie%s		partie.ads		972a1844 BN EE NE OO PK GE
+U partie%s		partie.ads		4f342c89 BN EE NE OO PK GE
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W liste_generique%s	liste_generique.adb	liste_generique.ali
@@ -22,6 +23,8 @@ D ada.ads		20070406091342 3ffc8e18 ada%s
 D a-except.ads		20140730140058 5250cb69 ada.exceptions%s
 D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
 D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-nudira.ads		20100622172941 2fef2912 ada.numerics.discrete_random%s
 D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
 D a-tags.ads		20140730140058 dc4d0634 ada.tags%s
 D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
@@ -29,17 +32,20 @@ D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
 D interfac.ads		20141120112812 6033a23f interfaces%s
 D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
-D liste_generique.ads	20171206213436 58adacfd liste_generique%s
-D participant.ads	20171127003606 ced88c70 participant%s
-D partie.ads		20171206213705 3932cd1d partie%s
-D partie.adb		20171127012445 58dec364 partie%b
-D puissance4.ads	20171206213642 3060f594 puissance4%s
-D puissance4.adb	20171129233840 93e1ff83 puissance4%b
+D liste_generique.ads	20171207131102 34bd58f2 liste_generique%s
+D moteur_jeu.ads	20171208140842 5390bf01 moteur_jeu%s
+D moteur_jeu.adb	20171208140955 e140b915 moteur_jeu%b
+D participant.ads	20171208141025 7ad64cb2 participant%s
+D partie.ads		20171208140912 3932cd1d partie%s
+D partie.adb		20171208142323 f76e4bbe partie%b
+D puissance4.ads	20171208135732 467ea6f7 puissance4%s
+D puissance4.adb	20171208142044 c854ac25 puissance4%b
 D system.ads		20141031112219 1d274481 system%s
 D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
 D s-exctab.ads		20140225151139 54135002 system.exception_table%s
 D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
 D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-rannum.ads		20150205111725 99ade2f2 system.random_numbers%s
 D s-soflin.ads		20140801100131 aa763b52 system.soft_links%s
 D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
 D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
@@ -48,47 +54,51 @@ D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
 D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
 X 1 ada.ads
-16K9*Ada 19e8 14|3r6 15|1r6 2r6 6r5 7r5
+16K9*Ada 19e8 18|3r6 19|1r6 2r6 7r5 8r5
 X 3 a-inteio.ads
-18K13*Integer_Text_IO[8|46] 15|2w10 7r9
-X 7 a-textio.ads
-49K13*Text_IO 471e16 14|3w10 15|1w10 6r9
-X 12 liste_generique.ads
-15k9*Liste_Generique 55e20 14|1w6
-X 13 participant.ads
-1K9*Participant 8e16 14|2w6 4r5 15|4w6 8r5
-3E10*Joueur 3e38 14|17r45 35r51 15|12r49 14r14
-3n21*Joueur1{3E10} 15|19r19
-6V14*Adversaire{3E10} 15|27s17
-X 14 partie.ads
-7+10 Etat 15r36 15r59 17r35 19r31 21r36 25r44 27r44 35r38 15|12r36
-8+10 Coup 15r46 23r40 25r57 27r57 15|13r9
+18K13*Integer_Text_IO[10|46] 19|2w10 8r9
+X 9 a-textio.ads
+49K13*Text_IO 471e16 18|3w10 19|1w10 7r9
+263U14*Put_Line 19|32s9 34s9 37s7
+X 14 liste_generique.ads
+15k9*Liste_Generique 55e20 18|1w6
+X 15 moteur_jeu.ads
+30k9*Moteur_Jeu 47e15 19|5w6
+X 17 participant.ads
+1K9*Participant 8e16 18|2w6 4r5 19|4w6 9r5
+3E10*Joueur 3e38 18|17r45 35r51 19|13r49 15r14
+3n21*Joueur1{3E10} 19|20r19 31r19
+6V14*Adversaire{3E10} 19|28s17
+X 18 partie.ads
+7+10 Etat 15r37 15r60 17r35 19r31 21r36 25r44 27r44 35r38 19|13r36
+8+10 Coup 15r47 23r40 25r57 27r57 19|14r9
 11a5 Nom_Joueur1{string}
 13a5 Nom_Joueur2{string}
-15V19 Jouer{7+10} 15=25 15>42 15|25s12
+15V19 Jouer{7+10} 15=25 15>43 19|26s12
 15*25 E{7+10}
-15*42 C{8+10}
-17V19 Est_Gagnant{boolean} 17>31 17>41 15|26s17
+15*43 C{8+10}
+17V19 Est_Gagnant{boolean} 17>31 17>41 19|27s17
 17*31 E{7+10}
-17e41 J{13|3E10}
-19V19 Est_Nul{boolean} 19>27 15|17s11
+17e41 J{17|3E10}
+19V19 Est_Nul{boolean} 19>27 19|18s11 30s8
 19*27 E{7+10}
-21U20 Affiche_Jeu 21>32 15|18s7 29s5
+21U20 Affiche_Jeu 21>32 19|19s7 39s5
 21*32 E{7+10}
-23U20 Affiche_Coup 23>33 15|24s7
+23U20 Affiche_Coup 23>33 19|25s7
 23*33 C{8+10}
-25V19 Demande_Coup_Joueur1{8+10} 25>40 15|20s14
+25V19 Demande_Coup_Joueur1{8+10} 25>40 19|21s14
 25*40 E{7+10}
-27V19 Demande_Coup_Joueur2{8+10} 27>40 15|22s14
+27V19 Demande_Coup_Joueur2{8+10} 27>40 19|23s14
 27*40 E{7+10}
 29k9*Partie 7z10 8z10 11z5 13z5 15z19 17z19 19z19 21z20 23z20 25z19 27z19
-. 37l5 37e11 15|10b14 32l5 32t11
-35U15*Joue_Partie 35=27 35>44 15|12b13 30l7 30t18
-35*27 E{7+10} 15|12b25 17r19 18r19 20r35 22r35 25m7 25m18 25r18 26r29 29r17
-35e44 J{13|3E10} 15|12b42 16r15
-X 15 partie.adb
-13*5 C{14|8+10} 20m9 22m9 24r20 25r20
-14e5 Player{13|3E10} 16m5 19r10 26r31 27m7 27m28 27r28
-X 16 puissance4.ads
-11k9*Puissance4 15|3w6 16|36e15
+. 37l5 37e11 19|11b14 43l5 43t11
+35U15*Joue_Partie 35=27 35>44 19|13b13 41l7 41t18
+35*27 E{7+10} 19|13b25 18r19 19r19 21r35 23r35 26m7 26m18 26r18 27r29 30r16
+. 39r17
+35e44 J{17|3E10} 19|13b42 17r15
+X 19 partie.adb
+14*5 C{18|8+10} 21m9 23m9 25r20 26r20
+15e5 Player{17|3E10} 17m5 20r10 27r31 28m7 28r28 31r10
+X 20 puissance4.ads
+12k9*Puissance4 19|3w6 20|45e15
 

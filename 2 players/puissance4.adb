@@ -23,10 +23,10 @@ package body Puissance4 is
     I:Integer;
   begin
     I := 0;
-    while E(C.Col*hauteur+I) /= 0  loop
+    while E(C.Col*hauteur+I) /= 0  loop --on place I a la bonne hauteur
       I := I+1;
     end loop;
-    if C.Player = Joueur1 then
+    if C.Player = Joueur1 then -- on remplace la case par la bonne valeur
       E(C.Col*hauteur+I) := 1;
     else
       E(C.Col*hauteur+I) := 2;
@@ -48,7 +48,7 @@ package body Puissance4 is
     else
       X := 2;
     end if;
-    for I in E'range loop  -- boucle a optim avec while
+    for I in E'range loop  -- boucle pour parcourir la grille verticalement
       if I mod hauteur = 0 or E(I) /= X then
         S := 0;
       end if;
@@ -64,7 +64,7 @@ package body Puissance4 is
     S := 0;
     K1 := -1;
     K2 := 0;
-    for I in E'range loop
+    for I in E'range loop -- boucle pour parcourir la grille horizontalement
       if I mod hauteur = 0 then
         K1 := K1 + 1;
         K2 := 0;
@@ -83,7 +83,7 @@ package body Puissance4 is
     end loop;
     I := 0;
     S := 0;
-    for I in E'range loop
+    for I in E'range loop --boucle pour la diagonale /
       K2 := I/hauteur;
       K1 := 0;
       if E(I) = X then
@@ -108,7 +108,7 @@ package body Puissance4 is
     I := 0;
     S := 0;
     K2 := 0;
-    for I in E'range loop
+    for I in E'range loop  --boucle pour la diagonale \
       K2 := I/hauteur;
       K1 := 0;
       if E(I) = X then

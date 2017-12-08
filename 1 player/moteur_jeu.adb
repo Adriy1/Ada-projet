@@ -27,7 +27,8 @@ package body Moteur_Jeu is
       Iter : Liste_Coups.Iterateur;
       Next : Etat;
     begin
-      Next := Etat_Suivant(E,C);
+      Next := E;
+      Next := Etat_Suivant(Next,C);
       if J = JoueurMoteur then
         Mult := 1;
       else

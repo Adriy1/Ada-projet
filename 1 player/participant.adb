@@ -1,6 +1,6 @@
 package body Participant is
 
-  function Adversaire(J : in out Joueur) return Joueur is
+  function Adversaire(J : in  Joueur) return Joueur is
   begin
     if (J=Joueur1) then
       return Joueur2;

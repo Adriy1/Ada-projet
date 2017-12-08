@@ -27,7 +27,17 @@ package body partie is
       exit when Est_Gagnant(E,Player);
       Player := Adversaire(Player);
     end loop;
+    if Est_Nul(E) /= true then
+      if Player = Joueur1 then
+        Put_Line("LE JOUEUR 1 A GAGNE !!");
+      else
+        Put_Line("L'ORDINATEUR A GAGNE !!");
+      end if;
+    else
+      Put_Line("MATCH NUL");
+    end if;
     Affiche_Jeu(E);
+
   end Joue_Partie;
 
 end partie;

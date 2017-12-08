@@ -57,7 +57,7 @@ package body Puissance4 is
       if E(I) = X then
         S := S + 1;
         if S = nbp then
-          Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
+          -- Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
           return true;
         end if;
       end if;
@@ -77,7 +77,7 @@ package body Puissance4 is
       if E(K2+K1) = X then
         S := S + 1;
         if S = nbp then
-          Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
+          -- Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
           return true;
         end if;
       end if;
@@ -98,7 +98,7 @@ package body Puissance4 is
           else
             S := S + 1;
             if S = nbp then
-              Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
+            --  Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
               return true;
             end if;
           end if;
@@ -123,7 +123,6 @@ package body Puissance4 is
           else
             S := S + 1;
             if S = nbp then
-              Put_Line("LE JOUEUR "& integer'image(X) &" A GAGNE !!");
               return true;
             end if;
           end if;
@@ -254,7 +253,7 @@ function Demande_Coup_Joueur1(E : Etat) return Coup is
       L : Liste_Coups.Liste;
       C:Coup;
     begin
-      for I in 1..largeur loop
+      for I in 0..largeur-1 loop
         C.Col := I;
         if E(C.Col*hauteur+hauteur-1) = 0 then
           Liste_Coups.Insere_Tete(C,L);
@@ -267,7 +266,6 @@ function Demande_Coup_Joueur1(E : Etat) return Coup is
   function Eval(E : Etat ) return Integer is
     I : Integer;
     S : Integer;
-    N : Integer;
     SMAX : Integer;
     K1 : Integer;
     K2 : Integer;

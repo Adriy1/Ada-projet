@@ -1,0 +1,159 @@
+V "GNAT Lib v5"
+M P W=b
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_RECURSION
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U main1joueurs%b	main1joueurs.adb	ad217c98 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.numerics%s	a-numeri.ads		a-numeri.ali
+Z ada.numerics.discrete_random%s
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_deallocation%s
+W liste_generique%s	liste_generique.adb	liste_generique.ali
+W moteur_jeu%s		moteur_jeu.adb		moteur_jeu.ali
+W participant%s		participant.adb		participant.ali
+W partie%s		partie.adb		partie.ali
+W puissance4%s		puissance4.adb		puissance4.ali
+W system%s		system.ads		system.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+W system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-except.ads		20140730140058 5250cb69 ada.exceptions%s
+D a-finali.ads		20140611123707 69f99942 ada.finalization%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-nudira.ads		20100622172941 2fef2912 ada.numerics.discrete_random%s
+D a-nudira.adb		20100622172941 e57ce22b ada.numerics.discrete_random%b
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20140730140058 dc4d0634 ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D a-uncdea.ads		20070406091342 f15a5ed1 ada.unchecked_deallocation%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D liste_generique.ads	20171207131102 34bd58f2 liste_generique%s
+D liste_generique.adb	20171208135732 bfdf41fa liste_generique%b
+D main1joueurs.adb	20171208173001 01b0c043 main1joueurs%b
+D moteur_jeu.ads	20171208140842 5390bf01 moteur_jeu%s
+D moteur_jeu.adb	20171208140955 e140b915 moteur_jeu%b
+D participant.ads	20171208141025 7ad64cb2 participant%s
+D partie.ads		20171208140912 3932cd1d partie%s
+D partie.adb		20171208142323 f76e4bbe partie%b
+D puissance4.ads	20171208135732 467ea6f7 puissance4%s
+D puissance4.adb	20171208142044 c854ac25 puissance4%b
+D system.ads		20141031112219 1d274481 system%s
+D s-conca2.ads		20140225151544 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-finmas.ads		20140225151139 814daec4 system.finalization_masters%s
+D s-finroo.ads		20120426095924 4ff27390 system.finalization_root%s
+D s-imgint.ads		20090409150019 02dbe0c2 system.img_int%s
+D s-imguns.ads		20140717070019 9ff43cf7 system.img_uns%s
+D s-memory.ads		20140225151139 597d6634 system.memory%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-pooglo.ads		20110804083314 542f33d0 system.pool_global%s
+D s-rannum.ads		20150205111725 99ade2f2 system.random_numbers%s
+D s-rannum.adb		20150205111725 20ba1217 system.random_numbers%b
+D s-ransee.ads		20120130115052 01a57b33 system.random_seed%s
+D s-secsta.ads		20140225151139 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140801100131 aa763b52 system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
+D s-stalib.adb		20140225151139 f2fe2716 system.standard_library%b
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20131010103753 b16154c2 system.storage_pools%s
+D s-stposu.ads		20140718101241 97a6219c system.storage_pools.subpools%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D s-valuns.ads		20150220142606 10a8ed3b system.val_uns%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 19|1r6 2r6 9r5 10r5
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[12|46] 19|2w10 10r9
+X 8 a-nudira.adb
+51V16 Random[39|83]{21|18I8[19|23]} 40|392b13[21|19[19|23]]
+X 11 a-textio.ads
+49K13*Text_IO 471e16 19|1w10 9r9
+263U14*Put_Line 19|56s4 57s4 58s4 59s4 60s4
+X 15 interfac.ads
+68M9*Unsigned_32
+71M9*Unsigned_64
+X 17 liste_generique.ads
+15k9*Liste_Generique 55e20 19|6w6
+16P10 Liste
+X 19 main1joueurs.adb
+16U11*Main1Joueurs 16b11 65l5 65t17
+17K12 MyPuissance4[25|12] 24r11 25r11 26r11 27r11 28r11 29r11 30r11 31r11
+. 32r11 39r35 40r35 43r35 44r35 45r35 46r35 47r35 48r35 52r7 55r4
+23K11 MyComputer[20|30] 37r7 49r35
+39K12 MyPartie[23|29] 50r8
+52a4 P{25|16A8[17]} 55m29 64m16 64r16
+X 20 moteur_jeu.ads
+30k9*Moteur_Jeu 19|7w6 23r29 20|47e15
+36V13 Choix_Coup{25|18R8[19|17]} 19|49r46[23]
+X 21 moteur_jeu.adb
+18I8 Valeurs<short_short_integer>
+X 22 participant.ads
+1K9*Participant 19|4w6 11r5 22|8e16
+3n21*Joueur1{3E10} 19|34r11
+3n30*Joueur2{3E10} 19|64r19
+X 23 partie.ads
+29k9*Partie 19|5w6 39r28 23|37e11
+35U15 Joue_Partie 19|64s4[39]
+X 25 puissance4.ads
+12k9*Puissance4 19|3w6 17r32 25|45e15
+16A8 Etat(integer)<integer> 19|24r24[17] 39r48[17] 52r20[17]
+18R8 Coup 19|25r24[17] 40r48[17]
+23U13 Initialiser 19|55s17[17]
+25V12 Jouer{16A8[19|17]} 19|26r24[17] 43r48[17]
+27V12 Est_Gagnant{boolean} 19|27r24[17] 44r48[17]
+29V12 Est_Nul{boolean} 19|28r24[17] 45r48[17]
+31U13 Affiche_Jeu 19|46r48[17]
+33U13 Affiche_Coup 19|29r24[17] 47r48[17]
+35V12 Demande_Coup_Joueur1{18R8[19|17]} 19|48r48[17]
+39K11 Liste_Coups[17|15] 19|30r24[17]
+41V12 Coups_Possibles{17|16P10[39[19|17]]} 19|31r24[17]
+43V12 Eval{integer} 19|32r24[17]
+X 27 system.ads
+67M9*Address
+X 36 s-memory.ads
+53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
+X 39 s-rannum.ads
+75V13*Random{15|68M9} 40|221i21
+76V13*Random{15|71M9} 40|221i21
+X 46 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+

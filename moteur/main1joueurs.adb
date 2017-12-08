@@ -15,9 +15,9 @@ use Participant;
 
 procedure Main1Joueurs is
    package MyPuissance4 is new Puissance4(10,10,4);
-   package MyListe is new Liste_Generique(MyPuissance4.Coup, MyPuissance4.Affiche_Coup);
+   --package Liste_Coups is new Liste_Generique(MyPuissance4.Coup, MyPuissance4.Affiche_Coup);
    -- definition d'une partie entre un humain en Joueur 1 et un humain en Joueur 2
-   use MyListe;
+   --use Liste_Coups;
 
    function Etat_Suivant(E : MyPuissance4.Etat; C : MyPuissance4.Coup) return MyPuissance4.Etat is
      S : MyPuissance4.Etat;
@@ -34,7 +34,7 @@ procedure Main1Joueurs is
           MyPuissance4.Est_Gagnant,
           MyPuissance4.Est_Nul,
           MyPuissance4.Affiche_Coup,
-          MyListe,
+          MyPuissance4.Liste_Coups,
           MyPuissance4.Coups_Possibles,
           MyPuissance4.Eval,
           3,
@@ -53,7 +53,7 @@ procedure Main1Joueurs is
 				  MyPuissance4.Affiche_Jeu,
 				  MyPuissance4.Affiche_Coup,
 				  MyPuissance4.Demande_Coup_Joueur1,
-				  MyPuissance4.Demande_Coup_Joueur2);
+				  MyComputer.Choix_Coup);
    use MyPartie;
 
    P: MyPuissance4.Etat;

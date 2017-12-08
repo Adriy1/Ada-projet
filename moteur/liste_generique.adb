@@ -1,4 +1,4 @@
-Iterateur
+
 with Ada.Text_Io; use Ada.Text_Io;
 with Ada.Unchecked_Deallocation;
 
@@ -12,7 +12,9 @@ package body Liste_Generique is
 		Suiv: Liste;
 	end record;
 
-	type Iterateur_Interne is Liste;
+	type Iterateur_Interne is record
+		L : Liste;
+	end record;
 
 	-- Procedure de liberation d'une Cellule (accedee par Liste)
 	procedure Liberer is new Ada.Unchecked_Deallocation (Cellule, Liste);
@@ -124,13 +126,13 @@ package body Liste_Generique is
 	end Insere_Queue;
 
 	function Creer_Iterateur(L : Liste) return Iterateur is
-    Iter : Iterateur;
+    I : Iterateur;
   begin
     if(L = null) then
       return null;
     else
-      Iter := new Iterateur_Interne;
-      Iter := L;
+      I := new Iterateur_Interne;
+      I.L := L;
       return I;
     end if;
   end Creer_Iterateur;
@@ -138,9 +140,9 @@ package body Liste_Generique is
   procedure Libere_Iterateur(It : in out Iterateur) is
 
   begin
-    if(Iter /= null) then
-      LibererIt(Iter);
-      Iter := null;
+    if(It /= null) then
+      LibererIt(It);
+      It := null;
     end if;
   end Libere_Iterateur;
 
@@ -148,25 +150,25 @@ package body Liste_Generique is
      I : Iterateur;
   begin
     I := It;
-    It := Creer_Iterateur(It.Suiv);
+    It := Creer_Iterateur(It.L.Suiv);
     Libere_Iterateur(I);
   end Suivant;
 
   function Element_Courant(It : Iterateur) return Element is
   begin
-    if(Iter /= null and then Iter /= null) then
-      return Iter.Val;
+    if(It /= null and then It.L /= null) then
+      return It.L.Val;
     end if;
     raise FinDeListe;
   end Element_Courant;
 
-  function A_Suivant(Iter : Iterateur) return Boolean is
+  function A_Suivant(It : Iterateur) return Boolean is
 
   begin
-    if(Iter = null) then
+    if(It = null) then
       return False;
     end if;
-    return Iter.Suiv /= null;
+    return It.L.Suiv /= null;
   end A_Suivant;
 
 

@@ -1,5 +1,6 @@
 with Participant; use Participant;
 with Liste_Generique;
+with Puissance4;
 with Ada.Text_IO;
 
 generic
@@ -18,8 +19,7 @@ generic
     -- Implantation d'un package de liste de coups
     with package Liste_Coups is new Liste_Generique(Coup, Affiche_Coup);
     -- Retourne la liste des coups possibles pour J a partir de l'etat
-    with function Coups_Possibles(E : Etat; J : Joueur)
-            return Liste_Coups.Liste;
+    with function Coups_Possibles(E : Etat; J : Joueur) return Liste_Coups.Liste;
     -- Evaluation statique du jeu du point de vue de l'ordinateur
     with function Eval(E : Etat ) return Integer;
     -- Profondeur de recherche du coup
@@ -29,10 +29,11 @@ generic
 
 package Moteur_Jeu is
 
+
     -- Choix du prochain coup par l'ordinateur.
     -- E : l'etat actuel du jeu;
     -- P : profondeur a laquelle la selection doit s'effetuer
-   function Choix_Coup(E : Etat; P : Natural) return Coup;
+   function Choix_Coup(E : Etat) return Coup;
 
 private
     -- Evaluation d'un coup a partir d'un etat donne
@@ -41,6 +42,6 @@ private
     -- C : Coup a evaluer
     -- J : Joueur qui realise le coup
     function Eval_Min_Max(E : Etat; P : Natural; C : Coup; J : Joueur)
-        return Coup;
+        return Integer;
 
 end Moteur_Jeu;

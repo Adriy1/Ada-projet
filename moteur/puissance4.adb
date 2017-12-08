@@ -7,11 +7,10 @@ use Ada.Text_IO;
 use Ada.Integer_Text_IO;
 use Participant;
 
-package Liste_Coups is new Liste_Generique(Coup, Affiche_Coup);
-use Liste_Coups;
-
 package body Puissance4 is
 
+  --package  Liste_Coups is new Liste_Generique(Coup, Affiche_Coup);
+  --use Liste_Coups;
 
   procedure Initialiser(E : out Etat) is
     I:Integer;
@@ -149,7 +148,7 @@ package body Puissance4 is
     end loop;
     J := Joueur1;
     if Est_Gagnant(E,J) = false then
-      J := JoueurMoteur;
+      J := Joueur2;
       if Est_Gagnant(E,J) = false then
         Put_Line("MATCH NUL !!");
         return true;
@@ -190,8 +189,8 @@ package body Puissance4 is
 
 procedure Affiche_Coup(C : in Coup) is
 begin
-  if C.Player = JoueurMoteur then
-    Put("JoueurMoteur joue ");Put(C.Col);New_Line;
+  if C.Player = Joueur2 then
+    Put("Joueur2 joue ");Put(C.Col);New_Line;
   else
     Put("Joueur1 joue ");Put(C.Col);New_Line;
   end if;
@@ -225,16 +224,16 @@ function Demande_Coup_Joueur1(E : Etat) return Coup is
     return C;
   end Demande_Coup_Joueur1;
 
-  function Demande_Coup_JoueurMoteur(E : Etat) return Coup is
+  function Demande_Coup_Joueur2(E : Etat) return Coup is
       C : Coup;
       B : Boolean;
       T : Boolean;
     begin
-      C.Player := JoueurMoteur;
+      C.Player := Joueur2;
       B := false;
       T := false;
       while (B = false or T = false) loop
-        Put_Line("JoueurMoteur prochain coup ?");
+        Put_Line("Joueur2 prochain coup ?");
         Get(C.Col);
         if C.Col>=largeur or C.Col<0 then
         Put("Error: Cout Impossible");
@@ -248,20 +247,22 @@ function Demande_Coup_Joueur1(E : Etat) return Coup is
         end if;
       end loop;
       return C;
-    end Demande_Coup_JoueurMoteur;
+    end Demande_Coup_Joueur2;
 
 
-  function Coups_Possibles(E : Etat; J : Joueur) return Liste_Coups.Liste is
-    L : Liste_Coups.Liste;
-    J:Integer;
-  begin
-    for J in 1..largeur loop
-      if E(C.Col*hauteur+hauteur-1) = 0 then
-        Insere_Tete(J,L);
-      end if;
-    end loop;
-    return L;
-  end Coups_Possibles
+    function Coups_Possibles(E : Etat; J : Joueur) return Liste_Coups.Liste is
+      L : Liste_Coups.Liste;
+      C:Coup;
+    begin
+      for I in 1..largeur loop
+        C.Col := I;
+        if E(C.Col*hauteur+hauteur-1) = 0 then
+          Liste_Coups.Insere_Tete(C,L);
+        end if;
+      end loop;
+      return L;
+    end Coups_Possibles;
+
 
   function Eval(E : Etat ) return Integer is
     I : Integer;

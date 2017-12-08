@@ -20,7 +20,7 @@ package body partie is
       if Player = Joueur1 then
         C := Demande_Coup_Joueur1(E);
       else
-        C := Choix_Coup(E,P)
+        C := Demande_Coup_Joueur2(E);
       end if;
       Affiche_Coup(C);
       E := Jouer(E,C);
